@@ -1,10 +1,37 @@
 {
   "manifest_version": 3,
-  "name": "Hello Extensions",
-  "description": "Base Level Extension",
+  "name": "Simple HTML Reader",
   "version": "1.0",
+  "description": "Reads the HTML of a site and performs a conditional action.",
+  "permissions": [
+    "activeTab"
+  ],
+  "web_accessible_resources": [
+   {
+      "resources": [
+         "sounds/1.mp3",
+         "sounds/2.mp3",
+         "sounds/3.mp3",
+         "sounds/4.mp3",
+         "sounds/5.mp3",
+         "sounds/6.mp3",
+         "sounds/7.mp3"
+      ],
+      "matches": ["<all_urls>"]
+   }
+]
+,
+  "host_permissions": ["https://pniot.ariel.ac.il/projects/tzmm*"],
+  "content_scripts": [
+    {
+      "matches": ["https://pniot.ariel.ac.il/projects/tzmm*"],
+      "js": ["content.js"]
+    }
+  ],
   "action": {
     "default_popup": "hello.html",
     "default_icon": "hello_extensions.png"
   }
+  
+  
 }
