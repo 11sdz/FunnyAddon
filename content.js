@@ -32,7 +32,7 @@ waitForElement('input[name="txtNumRecord_1"]', (targetElement) => {
 // Improved sound playing function
 function playRandomSound() {
     // Generate a random number between 1 and 7
-    var x = Math.floor(Math.random() * 7) + 1;
+    var x = Math.floor(Math.random() * 9) + 1;
 
     // Get the path to the sound file from the extension folder
     var soundPath = chrome.runtime.getURL('sounds/' + x + '.mp3');
