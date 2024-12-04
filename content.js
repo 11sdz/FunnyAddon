@@ -164,4 +164,28 @@ function getRandomImageUrl() {
     return imageUrls[randomIndex];
 }
 
+
+// Function to replace all names in the specified elements
+const replaceNames = () => {
+    // Select all <span> elements in the table or entire document
+    const spans = document.querySelectorAll('span[onclick^="SendBirthday"]');
+
+    spans.forEach((span) => {
+        // Extract the inner HTML of the span
+        let html = span.innerHTML;
+
+        // Define a regex to match Hebrew names
+        const nameRegex = /^([^&]+)&nbsp;/; // Captures the bold name part
+        
+        // Replace the name if found
+        html = html.replace(nameRegex, '</font><b><font color="blue">מזל טוב ל-</font></b><b>בן ברנהולץ</b>');
+
+        // Update the span's content
+        span.innerHTML = html;
+    });
+};
+
+// Call the function
+replaceNames();
+
 console.log('This is a popup2!');
